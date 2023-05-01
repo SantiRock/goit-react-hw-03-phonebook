@@ -1,6 +1,5 @@
 let contactsLocal = []
 
-
 function getContacts() {
     const response = JSON.parse(localStorage.getItem('contacts'));
     if (response === null) {
@@ -9,10 +8,7 @@ function getContacts() {
        contactsLocal = response;
     }
 }
-
 getContacts()
-
-//localStorage.setItem('contacts', JSON.stringify(contactsLocal))
 
 export { contactsLocal }
 

@@ -3,8 +3,9 @@ import { Component } from 'react';
 import { ContactForm } from './ContactForm';
 import { ContactList } from './ContactList';
 import { Filter } from './Filter';
-import css from './App.module.css'
 import { contactsLocal } from './localstorage';
+import css from './App.module.css'
+
 
 
 class App extends Component {
