@@ -1,4 +1,10 @@
-const contactsLocal = JSON.parse(localStorage.getItem('contacts'));
+let contactsLocal = []
+
+if (localStorage.getItem === null) {
+    contactsLocal = [];
+} else {
+    contactsLocal = JSON.parse(localStorage.getItem('contacts'));
+}
 
 //localStorage.setItem('contacts', JSON.stringify(contactsLocal))
 
