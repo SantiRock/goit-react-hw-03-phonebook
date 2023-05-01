@@ -1,14 +1,20 @@
 let contactsLocal = []
 
-if (localStorage.getItem === null) {
-    contactsLocal = [];
-} else {
-    contactsLocal = JSON.parse(localStorage.getItem('contacts'));
+
+function getContacts() {
+    const response = JSON.parse(localStorage.getItem('contacts'));
+    if (response === null) {
+      contactsLocal = [];
+    } else {
+       contactsLocal = response;
+    }
 }
+
+getContacts()
 
 //localStorage.setItem('contacts', JSON.stringify(contactsLocal))
 
-export default contactsLocal
+export { contactsLocal }
 
 /*const contactsSave = [
     {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},

@@ -4,7 +4,7 @@ import { ContactForm } from './ContactForm';
 import { ContactList } from './ContactList';
 import { Filter } from './Filter';
 import css from './App.module.css'
-import contactsLocal from './localstorage';
+import { contactsLocal } from './localstorage';
 
 
 class App extends Component {
@@ -15,11 +15,15 @@ class App extends Component {
 
   async componentDidMount() {
     try {
-      const response = await JSON.parse(localStorage.getItem('contacts'));
-      console.log(response)
+    const response = await JSON.parse(localStorage.getItem('contacts'));
+    if (response === null) {
+      return
+    } else {
       this.setState({contacts: response})
+    }
     } catch {
       console.log('Something went wrong')
+      this.setState({contacts: []})
     }
   }
 
